@@ -2,7 +2,7 @@
   {
     "id": 17,
     "title": "What I Talk About When I Talk About Running",
-    "genre": "Non-fiction",
+    "genre": 4,
     "rating": 2,
     "published": "2008",
     "authorId": 10
@@ -10,7 +10,7 @@
   {
     "id": 18,
     "title": "Norwegian Wood",
-    "genre": "Fiction",
+    "genre": 1,
     "rating": 5,
     "published": "2000",
     "authorId": 10
@@ -18,7 +18,7 @@
   {
     "id": 19,
     "title": "The History of Western Philosophy",
-    "genre": "Philosophy",
+    "genre": 5,
     "rating": 5,
     "published": "1945",
     "authorId": 11
@@ -26,7 +26,7 @@
   {
     "id": 1,
     "title": "Less",
-    "genre": "Fiction",
+    "genre": 1,
     "rating": 5,
     "published": "2018",
     "authorId": 1
@@ -34,7 +34,7 @@
   {
     "id": 2,
     "title": "Pachinko",
-    "genre": "Fiction",
+    "genre": 1,
     "rating": 5,
     "published": "2018",
     "authorId": 2
@@ -42,7 +42,7 @@
   {
     "id": 3,
     "title": "Crime and Punishment",
-    "genre": "Classics",
+    "genre": 7,
     "rating": 5,
     "published": "1866",
     "authorId": 4
@@ -50,7 +50,7 @@
   {
     "id": 4,
     "title": "Telex from Cuba",
-    "genre": "Fiction",
+    "genre": 1,
     "rating": 5,
     "published": "2008",
     "authorId": 5
@@ -59,7 +59,7 @@
   {
     "id": 8,
     "title": "The Idiot",
-    "genre": "Classics",
+    "genre": 7,
     "rating": 4,
     "published": "1868",
     "authorId": 4
@@ -67,7 +67,7 @@
   {
     "id": 9,
     "title": "Angles",
-    "genre": "Fiction",
+    "genre": 1,
     "rating": 5,
     "published": "2003",
     "authorId": 3
@@ -75,7 +75,7 @@
   {
     "id": 10,
     "title": "The Largesse of the Sea Maiden",
-    "genre": "Short Stories",
+    "genre": 2,
     "rating": 5,
     "published": "2018",
     "authorId": 3
@@ -83,7 +83,7 @@
   {
     "id": 15,
     "title": "There Are More Beautiful Things Than Beyonce",
-    "genre": "Poetry",
+    "genre": 3,
     "rating": 4,
     "published": "2017",
     "authorId": 9
@@ -91,7 +91,7 @@
   {
     "id": 16,
     "title": "The Wind Up Bird Chronicles",
-    "genre": "Fiction",
+    "genre": 1,
     "rating": 5,
     "published": "1996",
     "authorId": 10
@@ -99,7 +99,7 @@
   {
     "id": 11,
     "title": "No One Belongs Here More Than You",
-    "genre": "Short Stories",
+    "genre": 2,
     "rating": 2,
     "published": "2007",
     "authorId": 6
@@ -107,7 +107,7 @@
   {
     "id": 12,
     "title": "Bird by Bird: Some Instructions on Writing and Life",
-    "genre": "Writing",
+    "genre": 6,
     "rating": 3,
     "published": "1995",
     "authorId": 7
@@ -115,7 +115,7 @@
   {
     "id": 13,
     "title": "Grace (Eventually): Thoughts on Faith",
-    "genre": "Non-fiction",
+    "genre": 4,
     "rating": 3,
     "published": "1995",
     "authorId": 7
@@ -123,7 +123,7 @@
   {
     "id": 14,
     "title": "A Thousand Mornings",
-    "genre": "Poetry",
+    "genre": 3,
     "rating": 5,
     "published": "2012",
     "authorId": 8
@@ -131,7 +131,7 @@
   {
     "id": 30,
     "title": "Stitches",
-    "genre": "Non-fiction",
+    "genre": 4,
     "rating": 3,
     "published": "2013",
     "authorId": 7
@@ -140,7 +140,7 @@
   {
     "id": 20,
     "title": "Men Without Women",
-    "genre": "Short Stories",
+    "genre": 2,
     "rating": 3,
     "published": "2017",
     "authorId": 10
@@ -148,7 +148,7 @@
   {
     "id": 21,
     "title": "The Laughing Monsters",
-    "genre": "Fiction",
+    "genre": 1,
     "rating": 2,
     "published": "2014",
     "authorId": 3
@@ -156,7 +156,7 @@
   {
     "id": 31,
     "title": "Jesus' Son",
-    "genre": "Short Stories",
+    "genre": 2,
     "rating": 5,
     "published": "1992",
     "authorId": 3
@@ -164,7 +164,7 @@
   {
     "id": 22,
     "title": "The Art of Fiction: Notes on Craft for Young Writers",
-    "genre": "Writing",
+    "genre": 6,
     "rating": 5,
     "published": "1991",
     "authorId": 12
@@ -172,7 +172,7 @@
   {
     "id": 23,
     "title": "Kafka on the Shore",
-    "genre": "Fiction",
+    "genre": 1,
     "rating": 5,
     "published": "2006",
     "authorId": 10
@@ -180,7 +180,7 @@
   {
     "id": 24,
     "title": "Ariel",
-    "genre": "Poetry",
+    "genre": 3,
     "rating": 5,
     "published": "1965",
     "authorId": 13
@@ -188,7 +188,7 @@
   {
     "id": 25,
     "title": "The Bell Jar",
-    "genre": "Fiction",
+    "genre": 1,
     "rating": 3,
     "published": "1963",
     "authorId": 13
@@ -196,7 +196,7 @@
   {
     "id": 26,
     "title": "The Conquest of Happiness",
-    "genre": "Philosophy",
+    "genre": 5,
     "rating": 4,
     "published": "1930",
     "authorId": 11
@@ -204,7 +204,7 @@
   {
     "id": 27,
     "title": "The Colossus and Other Poems",
-    "genre": "Poetry",
+    "genre": 3,
     "rating": 3,
     "published": "1960",
     "authorId": 13
@@ -212,7 +212,7 @@
   {
     "id": 5,
     "title": "The Mars Room",
-    "genre": "Fiction",
+    "genre": 1,
     "rating": 4,
     "published": "2018",
     "authorId": 5
@@ -220,7 +220,7 @@
   {
     "id": 6,
     "title": "The Flamethrowers",
-    "genre": "Fiction",
+    "genre": 1,
     "rating": 2,
     "published": "2013",
     "authorId": 5
@@ -228,7 +228,7 @@
   {
     "id": 7,
     "title": "Nobody Move",
-    "genre": "Fiction",
+    "genre": 1,
     "rating": 3,
     "published": "2009",
     "authorId": 3
@@ -236,7 +236,7 @@
   {
     "id": 35,
     "title": "Diary of a Writer: 1877-1881",
-    "genre": "Non-fiction",
+    "genre": 4,
     "rating": 3,
     "published": "1881",
     "authorId": 4

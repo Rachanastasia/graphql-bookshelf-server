@@ -9,7 +9,15 @@ const { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLSchema, GraphQLID, 
 //define relationships between types
 //define root queries
 //Root queries are how a user can grab data
-
+const genres = [
+  {id: 1, title:'Fiction'},
+  {id: 2, title:'Short Stories'},
+  {id: 3, title:'Poetry'},
+  {id: 4, title:'Non-fiction'},
+  {id: 5, title:'Philosophy'},
+  {id: 6, title:'Writing'},
+  {id: 7, title: 'Classics'}
+]
 
 const AuthorType = new GraphQLObjectType({
   name: 'Author',
@@ -31,7 +39,11 @@ const BookType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLID },
     title: { type: GraphQLString },
-    genre: { type: GraphQLString },
+    genre: { 
+      type: GenreType,
+    resolve(parent, args) {
+      return genres.find(g => g.id === parent.genre);
+    } },
     rating: { type: GraphQLInt },
     published: { type: GraphQLString },
     author: {
@@ -42,6 +54,20 @@ const BookType = new GraphQLObjectType({
     }
   })
 });
+
+const GenreType = new GraphQLObjectType({
+  name: 'Genre',
+  fields: () => ({
+    id: {type: GraphQLID},
+    title: {type: GraphQLString},
+    books: {
+      type: new GraphQLList(BookType),
+      resolve(parent, args) {
+        return books.filter(b => b.genre === parent.id)
+      }
+    }
+  })
+})
 
 //get all books from genre
 //get all books with minimum rating
@@ -65,6 +91,13 @@ const RootQuery = new GraphQLObjectType({
         return authors.find(a => a.id === args.id);
       }
     },
+    genre: {
+      type: GenreType,
+      args: {id: {type: GraphQLID}},
+      resolve(parent, args){
+        return genres.find(g => g.id === args.id)
+      }
+    },
     books: {
       type: new GraphQLList(BookType),
       resolve(parent, args) {
@@ -75,6 +108,12 @@ const RootQuery = new GraphQLObjectType({
       type: new GraphQLList(AuthorType),
       resolve(parent, args) {
         return authors;
+      }
+    },
+    genres: {
+      type: new GraphQLList(GenreType),
+      resolve(parent, args){
+        return genres;
       }
     }
   }
