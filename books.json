@@ -136,6 +136,7 @@
     "published": "2013",
     "authorId": 7
   },
+<<<<<<< HEAD
   
   {
     "id": 20,
@@ -145,6 +146,9 @@
     "published": "2017",
     "authorId": 10
   },
+=======
+
+>>>>>>> 65ff0f369c2a8aeec719fb9bb9c8c28464cae289
   {
     "id": 21,
     "title": "The Laughing Monsters",

@@ -4,6 +4,7 @@ const authors = require('../../authors.json');
 
 const { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLSchema, GraphQLID, GraphQLList } = graphql;
 
+<<<<<<< HEAD
 //Schema file should:
 //define type
 //define relationships between types
@@ -18,6 +19,9 @@ const genres = [
   {id: 6, title:'Writing'},
   {id: 7, title: 'Classics'}
 ]
+=======
+
+>>>>>>> 65ff0f369c2a8aeec719fb9bb9c8c28464cae289
 
 const AuthorType = new GraphQLObjectType({
   name: 'Author',
