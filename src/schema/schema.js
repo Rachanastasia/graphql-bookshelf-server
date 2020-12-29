@@ -1,7 +1,6 @@
 const graphql = require('graphql');
 const books = require('../../books.json');
 const authors = require('../../authors.json');
-const { argsToArgsConfig } = require('graphql/type/definition');
 
 const { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLSchema, GraphQLID, GraphQLList } = graphql;
 
@@ -48,9 +47,13 @@ const BookType = new GraphQLObjectType({
   })
 });
 
-//get all books from genre
-//get all books with minimum rating
-
+const GenreType = new GraphQLObjectType({
+  name: 'Genre',
+  fields: () => ({
+    id: { type: GraphQLID },
+    name: { type: GraphQLString }
+  })
+})
 
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
@@ -100,6 +103,20 @@ const RootQuery = new GraphQLObjectType({
       type: new GraphQLList(AuthorType),
       resolve(parent, args) {
         return authors;
+      }
+    },
+    genres: {
+      type: new GraphQLList(GenreType),
+      resolve(parent, args) {
+        let obj = {}
+        let arr = []
+        books.forEach(b => obj[b.genre] = b.genre);
+        let i = 1;
+        for (const prop in obj) {
+          arr.push({ id: i, name: obj[prop] })
+          i++;
+        }
+        return arr;
       }
     }
   }
