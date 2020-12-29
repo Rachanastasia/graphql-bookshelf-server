@@ -45,8 +45,8 @@ const BookType = new GraphQLObjectType({
   })
 });
 
-const GenreType = new GraphQLObjectType({
-  name: 'Genre',
+const GenreItemType = new GraphQLObjectType({
+  name: 'GenreItem',
   fields: () => ({
     id: { type: GraphQLID },
     name: { type: GraphQLString }
@@ -69,13 +69,6 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
         return authors.find(a => a.id === args.id);
-      }
-    },
-    genre: {
-      type: GenreType,
-      args: { id: { type: GraphQLID } },
-      resolve(parent, args) {
-        return genres.find(g => g.id === args.id)
       }
     },
     books: {
@@ -111,7 +104,7 @@ const RootQuery = new GraphQLObjectType({
       }
     },
     genres: {
-      type: new GraphQLList(GenreType),
+      type: new GraphQLList(GenreItemType),
       resolve(parent, args) {
         let obj = {}
         let arr = []
