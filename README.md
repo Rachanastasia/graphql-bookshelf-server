@@ -10,7 +10,7 @@ View the live app [here](https://bookshelf-orcin.vercel.app/).
 
 - Node.js
 - Express.js
-- GrahQL
+- GraphQL
 - Deployed with Heroku
 
 ## Using the API
@@ -25,7 +25,7 @@ All lists of books are filtered by rating, with the highest rated books at the t
 
 Returns a list of books.
 
-### books(exclude: 1)
+#### books(exclude: 1)
 
 Returns every book except book 1.
 
