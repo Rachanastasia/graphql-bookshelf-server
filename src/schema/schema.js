@@ -80,7 +80,9 @@ const RootQuery = new GraphQLObjectType({
         }
 
         else {
-          return books;
+          return exclude
+            ? books.filter(b => b.id != exclude).sort((a, b) => a.rating > b.rating ? -1 : 1)
+            : books.sort((a, b) => a.rating > b.rating ? -1 : 1);
         }
 
       }
