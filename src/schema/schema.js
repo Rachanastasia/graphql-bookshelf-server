@@ -1,6 +1,7 @@
 const graphql = require('graphql');
 const books = require('../../books.json');
 const authors = require('../../authors.json');
+const { argsToArgsConfig } = require('graphql/type/definition');
 
 const { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLSchema, GraphQLID, GraphQLList } = graphql;
 
@@ -62,8 +63,26 @@ const RootQuery = new GraphQLObjectType({
     },
     books: {
       type: new GraphQLList(BookType),
+      args: {
+        genre: { type: GraphQLString },
+        rating: { type: GraphQLInt },
+        exclude: { type: GraphQLID }
+      },
       resolve(parent, args) {
-        return books.sort((a, b) => a.rating > b.rating ? -1 : 1);
+        const exclude = args.exclude ? args.exclude : null;
+
+        if (args.genre) {
+          return books.filter(b => b.genre == args.genre && b.id != exclude).sort((a, b) => a.rating > b.rating ? -1 : 1);
+        }
+
+        else if (args.rating) {
+          return books.filter(b => b.rating >= args.rating && b.id != exclude).sort((a, b) => a.rating > b.rating ? -1 : 1);
+        }
+
+        else {
+          return books;
+        }
+
       }
     },
     authors: {
