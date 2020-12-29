@@ -4,24 +4,6 @@ const authors = require('../../authors.json');
 
 const { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLSchema, GraphQLID, GraphQLList } = graphql;
 
-<<<<<<< HEAD
-//Schema file should:
-//define type
-//define relationships between types
-//define root queries
-//Root queries are how a user can grab data
-const genres = [
-  {id: 1, title:'Fiction'},
-  {id: 2, title:'Short Stories'},
-  {id: 3, title:'Poetry'},
-  {id: 4, title:'Non-fiction'},
-  {id: 5, title:'Philosophy'},
-  {id: 6, title:'Writing'},
-  {id: 7, title: 'Classics'}
-]
-=======
-
->>>>>>> 65ff0f369c2a8aeec719fb9bb9c8c28464cae289
 
 const AuthorType = new GraphQLObjectType({
   name: 'Author',
