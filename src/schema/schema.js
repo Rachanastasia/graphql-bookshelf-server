@@ -14,9 +14,16 @@ const AuthorType = new GraphQLObjectType({
     firstName: { type: GraphQLString },
     lastName: { type: GraphQLString },
     books: {
+      args: {
+        exclude: { type: GraphQLID }
+      },
       type: new GraphQLList(BookType),
       resolve(parent, args) {
-        return books.filter(b => b.authorId === parent.id);
+        const exclude = args.exclude ? args.exclude : null;
+
+        return exclude
+          ? books.filter(b => b.authorId === parent.id && b.id != exclude).sort((a, b) => a.rating > b.rating ? -1 : 1)
+          : books.filter(b => b.authorId === parent.id).sort((a, b) => a.rating > b.rating ? -1 : 1);
       }
     }
   })
@@ -33,7 +40,9 @@ const BookType = new GraphQLObjectType({
     author: {
       type: AuthorType,
       resolve(parent, args) {
+        console.log('PARENT', parent)
         return authors.find(a => a.id == parent.authorId);
+
       }
     }
   })
