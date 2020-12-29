@@ -32,11 +32,12 @@ const BookType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLID },
     title: { type: GraphQLString },
-    genre: { 
+    genre: {
       type: GenreType,
-    resolve(parent, args) {
-      return genres.find(g => g.id === parent.genre);
-    } },
+      resolve(parent, args) {
+        return genres.find(g => g.id === parent.genre);
+      }
+    },
     rating: { type: GraphQLInt },
     published: { type: GraphQLString },
     author: {
@@ -53,27 +54,10 @@ const BookType = new GraphQLObjectType({
 const GenreType = new GraphQLObjectType({
   name: 'Genre',
   fields: () => ({
-<<<<<<< HEAD
     id: { type: GraphQLID },
     name: { type: GraphQLString }
   })
 })
-=======
-    id: {type: GraphQLID},
-    title: {type: GraphQLString},
-    books: {
-      type: new GraphQLList(BookType),
-      resolve(parent, args) {
-        return books.filter(b => b.genre === parent.id)
-      }
-    }
-  })
-})
-
-//get all books from genre
-//get all books with minimum rating
-
->>>>>>> 4ff4ccb68d8dc8233178ea7d5f022a5c888d4011
 
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
@@ -95,8 +79,8 @@ const RootQuery = new GraphQLObjectType({
     },
     genre: {
       type: GenreType,
-      args: {id: {type: GraphQLID}},
-      resolve(parent, args){
+      args: { id: { type: GraphQLID } },
+      resolve(parent, args) {
         return genres.find(g => g.id === args.id)
       }
     },
@@ -134,21 +118,17 @@ const RootQuery = new GraphQLObjectType({
     },
     genres: {
       type: new GraphQLList(GenreType),
-<<<<<<< HEAD
       resolve(parent, args) {
         let obj = {}
         let arr = []
         books.forEach(b => obj[b.genre] = b.genre);
+
         let i = 1;
         for (const prop in obj) {
           arr.push({ id: i, name: obj[prop] })
           i++;
         }
         return arr;
-=======
-      resolve(parent, args){
-        return genres;
->>>>>>> 4ff4ccb68d8dc8233178ea7d5f022a5c888d4011
       }
     }
   }
