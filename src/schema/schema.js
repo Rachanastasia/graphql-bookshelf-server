@@ -71,15 +71,21 @@ const RootQuery = new GraphQLObjectType({
         return authors.find(a => a.id === args.id);
       }
     },
+
     books: {
       type: new GraphQLList(BookType),
       args: {
         genre: { type: GraphQLString },
         rating: { type: GraphQLInt },
+        authorId: { type: GraphQLID },
         exclude: { type: GraphQLID }
       },
       resolve(parent, args) {
         const exclude = args.exclude ? args.exclude : null;
+
+        if (args.authorId) {
+          return books.filter(b => b.authorId == args.authorId).sort((a, b) => a.rating > b.rating ? -1 : 1);
+        }
 
         if (args.genre) {
           return books.filter(b => b.genre == args.genre && b.id != exclude).sort((a, b) => a.rating > b.rating ? -1 : 1);
