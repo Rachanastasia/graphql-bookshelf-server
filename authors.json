@@ -63,7 +63,29 @@
     "id": 13,
     "firstName": "Sylvia",
     "lastName": "Plath"
+  },
+  {
+    "id": 14,
+    "firstName": "Roberto",
+    "lastName" : " Bolaño"
+  },
+  {
+    "id": 15,
+    "firstName": "Gabriel",
+    "lastName": "Márquez, García"
+  },
+  {
+    "id": 16,
+    "firstName": "Franz",
+    "lastName": "Kafka"
+  },
+  {
+    "id": 17,
+    "firstName": "James",
+    "lastName": "Baldwin"
   }
+  
+
   
   
   

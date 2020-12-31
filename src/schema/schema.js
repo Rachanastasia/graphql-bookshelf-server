@@ -1,6 +1,8 @@
 const graphql = require('graphql');
 const books = require('../../books.json');
 const authors = require('../../authors.json');
+const genres = require('../../genres.json');
+const languages = require('../../languages.json');
 
 const { GraphQLObjectType, GraphQLString, GraphQLInt, GraphQLSchema, GraphQLID, GraphQLList } = graphql;
 
@@ -18,7 +20,6 @@ const AuthorType = new GraphQLObjectType({
       type: new GraphQLList(BookType),
       resolve(parent, args) {
         const exclude = args.exclude ? args.exclude : null;
-
         return exclude
           ? books.filter(b => b.authorId === parent.id && b.id != exclude).sort((a, b) => a.rating > b.rating ? -1 : 1)
           : books.filter(b => b.authorId === parent.id).sort((a, b) => a.rating > b.rating ? -1 : 1);
@@ -32,7 +33,12 @@ const BookType = new GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLID },
     title: { type: GraphQLString },
-    genre: { type: GraphQLString },
+    genre: {
+      type: GenreType,
+      resolve(parent, args) {
+        return genres.find(g => g.id == parent.genreId);
+      }
+    },
     rating: { type: GraphQLInt },
     published: { type: GraphQLString },
     author: {
@@ -41,15 +47,53 @@ const BookType = new GraphQLObjectType({
         return authors.find(a => a.id == parent.authorId);
 
       }
+    },
+    language: {
+      type: LanguageType,
+      resolve(parent, args) {
+        return languages.find(l => l.id == parent.languageId);
+      }
     }
   })
 });
 
-const GenreItemType = new GraphQLObjectType({
-  name: 'GenreItem',
+const GenreType = new GraphQLObjectType({
+  name: 'Genre',
   fields: () => ({
     id: { type: GraphQLID },
-    name: { type: GraphQLString }
+    name: { type: GraphQLString },
+    books: {
+      args: {
+        exclude: { type: GraphQLID }
+      },
+      type: new GraphQLList(BookType),
+      resolve(parent, args) {
+        const exclude = args.exclude ? args.exclude : null;
+        return exclude
+          ? books.filter(b => b.genreId === parent.id && b.id != exclude).sort((a, b) => a.rating > b.rating ? -1 : 1)
+          : books.filter(b => b.genreId === parent.id).sort((a, b) => a.rating > b.rating ? -1 : 1);
+      }
+    }
+  })
+})
+
+const LanguageType = new GraphQLObjectType({
+  name: 'Language',
+  fields: () => ({
+    id: { type: GraphQLID },
+    language: { type: GraphQLString },
+    books: {
+      args: {
+        exclude: { type: GraphQLID }
+      },
+      type: new GraphQLList(BookType),
+      resolve(parent, args) {
+        const exclude = args.exclude ? args.exclude : null;
+        return exclude
+          ? books.filter(b => b.languageId === parent.id && b.id != exclude).sort((a, b) => a.rating > b.rating ? -1 : 1)
+          : books.filter(b => b.languageId === parent.id).sort((a, b) => a.rating > b.rating ? -1 : 1);
+      }
+    }
   })
 })
 
@@ -68,10 +112,23 @@ const RootQuery = new GraphQLObjectType({
       type: AuthorType,
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
-        return authors.find(a => a.id === args.id);
+        return authors.find(a => a.id == args.id);
       }
     },
-
+    genre: {
+      type: GenreType,
+      args: { id: { type: GraphQLID } },
+      resolve(parent, args) {
+        return genres.find(a => a.id == args.id);
+      }
+    },
+    language: {
+      type: LanguageType,
+      args: { id: { type: GraphQLID } },
+      resolve(parent, args) {
+        return languages.find(a => a.id === args.id);
+      }
+    },
     books: {
       type: new GraphQLList(BookType),
       args: {
@@ -83,45 +140,42 @@ const RootQuery = new GraphQLObjectType({
       resolve(parent, args) {
         const exclude = args.exclude ? args.exclude : null;
 
-        if (args.authorId) {
-          return books.filter(b => b.authorId == args.authorId).sort((a, b) => a.rating > b.rating ? -1 : 1);
-        }
+        // if (args.authorId) {
+        //   return books.filter(b => b.authorId == args.authorId).sort((a, b) => a.rating > b.rating ? -1 : 1);
+        // }
 
-        if (args.genre) {
-          return books.filter(b => b.genre == args.genre && b.id != exclude).sort((a, b) => a.rating > b.rating ? -1 : 1);
-        }
+        // if (args.genre) {
+        //   return books.filter(b => b.genre == args.genre && b.id != exclude).sort((a, b) => a.rating > b.rating ? -1 : 1);
+        // }
 
-        else if (args.rating) {
-          return books.filter(b => b.rating >= args.rating && b.id != exclude).sort((a, b) => a.rating > b.rating ? -1 : 1);
-        }
+        // else if (args.rating) {
+        //   return books.filter(b => b.rating >= args.rating && b.id != exclude).sort((a, b) => a.rating > b.rating ? -1 : 1);
+        // }
 
-        else {
-          return exclude
-            ? books.filter(b => b.id != exclude).sort((a, b) => a.rating > b.rating ? -1 : 1)
-            : books.sort((a, b) => a.rating > b.rating ? -1 : 1);
-        }
+        // else {
+        return exclude
+          ? books.filter(b => b.id != exclude).sort((a, b) => a.title > b.title ? 1 : -1)
+          : books.sort((a, b) => a.title > b.title ? 1 : -1);
+
 
       }
     },
     authors: {
       type: new GraphQLList(AuthorType),
       resolve(parent, args) {
-        return authors;
+        return authors.sort((a, b) => a.lastName > b.lastName ? -1 : 1)
       }
     },
     genres: {
-      type: new GraphQLList(GenreItemType),
+      type: new GraphQLList(GenreType),
       resolve(parent, args) {
-        let obj = {}
-        let arr = []
-        books.forEach(b => obj[b.genre] = b.genre);
-
-        let i = 1;
-        for (const prop in obj) {
-          arr.push({ id: i, name: obj[prop] })
-          i++;
-        }
-        return arr;
+        return genres.sort((a, b) => a.name > b.name ? -1 : 1);
+      }
+    },
+    languages: {
+      type: new GraphQLList(LanguageType),
+      resolve(parent, args) {
+        return languages.sort((a, b) => a.language > b.language ? -1 : 1);
       }
     }
   }

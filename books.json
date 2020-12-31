@@ -1,236 +1,384 @@
 [
   {
+    "id": 44,
+    "title": "The Woes of the True Policeman",
+    "genreId": 1,
+    "rating": 2,
+    "published": "2011",
+    "authorId": 14,
+    "languageId": 4
+  },
+  {
+    "id": 45,
+    "title": "One Hundred Years of Solitude",
+    "genreId": 5,
+    "rating": 5,
+    "published": "1967",
+    "authorId": 15,
+    "languageId": 4
+  },
+  {
+    "id": 46,
+    "title": "Love in the Time of Cholera",
+    "genreId": 5,
+    "rating": 3,
+    "published": "1985",
+    "authorId": 15,
+    "languageId": 4
+  },
+  {
+    "id": 47,
+    "title": "A Poetry Handbook",
+    "genreId": 3,
+    "rating": 5,
+    "published": "1994",
+    "authorId": 8,
+    "languageId": 1
+  },
+  {
+    "id": 50,
+    "title": "Blue Horses",
+    "genreId": 7,
+    "rating": 3,
+    "published": "2014",
+    "authorId": 8,
+    "languageId": 1
+  },
+  {
+    "id": 51,
+    "title": "The Trial",
+    "genreId": 5,
+    "rating": 5,
+    "published": "1925",
+    "authorId": 16,
+    "languageId": 5
+  },
+  {
+    "id": 52,
+    "title": "The Metamorphosis",
+    "genreId": 6,
+    "rating": 5,
+    "published": "1915",
+    "authorId": 16,
+    "languageId": 5
+  },
+  {
+    "id": 53,
+    "title": "Giovanni's Room",
+    "genreId": 1,
+    "rating": 5,
+    "published": "1956",
+    "authorId": 17,
+    "languageId": 1
+  },
+  {
     "id": 17,
     "title": "What I Talk About When I Talk About Running",
-    "genre": "Non-fiction",
+    "genreId": 2,
     "rating": 2,
     "published": "2008",
-    "authorId": 10
+    "authorId": 10,
+    "languageId": 2
   },
   {
     "id": 18,
     "title": "Norwegian Wood",
-    "genre": "Fiction",
+    "genreId": 1,
     "rating": 5,
     "published": "2000",
-    "authorId": 10
+    "authorId": 10,
+    "languageId": 2
   },
   {
     "id": 19,
     "title": "The History of Western Philosophy",
-    "genre": "Philosophy",
+    "genreId": 4,
     "rating": 5,
     "published": "1945",
-    "authorId": 11
+    "authorId": 11,
+    "languageId": 1
   },
   {
     "id": 1,
     "title": "Less",
-    "genre": "Fiction",
+    "genreId": 1,
     "rating": 5,
     "published": "2018",
-    "authorId": 1
+    "authorId": 1,
+    "languageId": 1
   },
   {
     "id": 2,
     "title": "Pachinko",
-    "genre": "Fiction",
+    "genreId": 1,
     "rating": 5,
     "published": "2018",
-    "authorId": 2
+    "authorId": 2,
+    "languageId": 1
   },
   {
     "id": 3,
     "title": "Crime and Punishment",
-    "genre": "Classics",
+    "genreId": "Classics",
     "rating": 5,
     "published": "1866",
-    "authorId": 4
+    "authorId": 4,
+    "languageId": 3
   },
   {
     "id": 4,
     "title": "Telex from Cuba",
-    "genre": "Fiction",
+    "genreId": 1,
     "rating": 5,
     "published": "2008",
-    "authorId": 5
+    "authorId": 5,
+    "languageId": 1
   },
  
   {
     "id": 8,
     "title": "The Idiot",
-    "genre": "Classics",
+    "genreId": "Classics",
     "rating": 4,
     "published": "1868",
-    "authorId": 4
+    "authorId": 4,
+    "languageId": 3
   },
   {
     "id": 9,
     "title": "Angles",
-    "genre": "Fiction",
+    "genreId": 1,
     "rating": 5,
     "published": "2003",
-    "authorId": 3
+    "authorId": 3,
+    "languageId": 1
   },
   {
     "id": 10,
     "title": "The Largesse of the Sea Maiden",
-    "genre": "Short Stories",
+    "genreId": 6,
     "rating": 5,
     "published": "2018",
-    "authorId": 3
+    "authorId": 3,
+    "languageId": 1
   },
   {
     "id": 15,
     "title": "There Are More Beautiful Things Than Beyonce",
-    "genre": "Poetry",
+    "genreId": 7,
     "rating": 4,
     "published": "2017",
-    "authorId": 9
+    "authorId": 9,
+    "languageId": 1
   },
   {
     "id": 16,
     "title": "The Wind Up Bird Chronicles",
-    "genre": "Fiction",
+    "genreId": 1,
     "rating": 5,
     "published": "1996",
-    "authorId": 10
+    "authorId": 10,
+    "languageId": 1
   },
   {
     "id": 11,
     "title": "No One Belongs Here More Than You",
-    "genre": "Short Stories",
+    "genreId": 6,
     "rating": 2,
     "published": "2007",
-    "authorId": 6
+    "authorId": 6,
+    "languageId": 1
   },
   {
     "id": 12,
     "title": "Bird by Bird: Some Instructions on Writing and Life",
-    "genre": "Writing",
+    "genreId": "Writing",
     "rating": 3,
     "published": "1995",
-    "authorId": 7
+    "authorId": 7,
+    "languageId": 1
   },
   {
     "id": 13,
     "title": "Grace (Eventually): Thoughts on Faith",
-    "genre": "Non-fiction",
+    "genreId": 2,
     "rating": 3,
     "published": "1995",
-    "authorId": 7
+    "authorId": 7,
+    "languageId": 1
   },
   {
     "id": 14,
     "title": "A Thousand Mornings",
-    "genre": "Poetry",
+    "genreId": 7,
     "rating": 5,
     "published": "2012",
-    "authorId": 8
+    "authorId": 8,
+    "languageId": 1
   },
   {
     "id": 30,
     "title": "Stitches",
-    "genre": "Non-fiction",
+    "genreId": 2,
     "rating": 3,
     "published": "2013",
-    "authorId": 7
+    "authorId": 7,
+    "languageId": 1
   },
   {
     "id": 21,
     "title": "The Laughing Monsters",
-    "genre": "Fiction",
+    "genreId": 1,
     "rating": 2,
     "published": "2014",
-    "authorId": 3
+    "authorId": 3,
+    "languageId": 1
   },
   {
     "id": 39,
     "title": "Jesus' Son",
-    "genre": "Short Stories",
+    "genreId": 6,
     "rating": 5,
     "published": "1992",
-    "authorId": 3
+    "authorId": 3,
+    "languageId": 1
   },
   {
     "id": 22,
     "title": "The Art of Fiction: Notes on Craft for Young Writers",
-    "genre": "Writing",
+    "genreId": "Writing",
     "rating": 5,
     "published": "1991",
-    "authorId": 12
+    "authorId": 12,
+    "languageId": 1
   },
   {
     "id": 23,
     "title": "Kafka on the Shore",
-    "genre": "Fiction",
+    "genreId": 1,
     "rating": 5,
     "published": "2006",
-    "authorId": 10
+    "authorId": 10,
+    "languageId": 2
   },
   {
     "id": 24,
     "title": "Ariel",
-    "genre": "Poetry",
+    "genreId": 7,
     "rating": 5,
     "published": "1965",
-    "authorId": 13
+    "authorId": 13,
+    "languageId": 1
   },
   {
     "id": 25,
     "title": "The Bell Jar",
-    "genre": "Fiction",
+    "genreId": 1,
     "rating": 3,
     "published": "1963",
-    "authorId": 13
+    "authorId": 13,
+    "languageId": 1
   },
   {
     "id": 26,
     "title": "The Conquest of Happiness",
-    "genre": "Philosophy",
+    "genreId": 4,
     "rating": 4,
     "published": "1930",
-    "authorId": 11
+    "authorId": 11,
+    "languageId": 1
   },
   {
     "id": 27,
     "title": "The Colossus and Other Poems",
-    "genre": "Poetry",
+    "genreId": 7,
     "rating": 3,
     "published": "1960",
-    "authorId": 13
+    "authorId": 13,
+    "languageId": 1
   },
   {
     "id": 5,
     "title": "The Mars Room",
-    "genre": "Fiction",
+    "genreId": 1,
     "rating": 4,
     "published": "2018",
-    "authorId": 5
+    "authorId": 5,
+    "languageId": 1
   },
   {
     "id": 6,
     "title": "The Flamethrowers",
-    "genre": "Fiction",
+    "genreId": 1,
     "rating": 2,
     "published": "2013",
-    "authorId": 5
+    "authorId": 5,
+    "languageId": 1
   },
   {
     "id": 7,
     "title": "Nobody Move",
-    "genre": "Fiction",
+    "genreId": 1,
     "rating": 3,
     "published": "2009",
-    "authorId": 3
+    "authorId": 3,
+    "languageId": 1
   },
   {
     "id": 35,
     "title": "Diary of a Writer: 1877-1881",
-    "genre": "Non-fiction",
+    "genreId": 2,
     "rating": 3,
     "published": "1881",
-    "authorId": 4
+    "authorId": 4,
+    "languageId": 3
+  },
+  {
+    "id": 40,
+    "title": "The First Bad Man",
+    "genreId": 1,
+    "rating": 4,
+    "published": "2015",
+    "authorId": 6,
+    "languageId": 1
+  },
+  {
+    "id": 41,
+    "title": "Crossing the Water",
+    "genreId": 7,
+    "rating": 2,
+    "published": "1971",
+    "authorId": 13,
+    "languageId": 1
+  },
+  {
+    "id": 42,
+    "title": "The Savage Detectives",
+    "genreId": 1,
+    "rating": 2,
+    "published": "1998",
+    "authorId": 14,
+    "languageId": 4
+  },
+  {
+    "id": 43,
+    "title": "2666",
+    "genreId": 1,
+    "rating": 5,
+    "published": "2004",
+    "authorId": 14,
+    "languageId": 4
+  },
+  
+  {
+    "id": 54,
+    "title": "Go Tell It on the Mountain",
+    "genreId": 1,
+    "rating": 3,
+    "published": "1953",
+    "authorId": 17,
+    "languageId": 1
   }
+  
   
 ]
