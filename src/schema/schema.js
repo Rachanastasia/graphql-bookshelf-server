@@ -82,7 +82,7 @@ const GenreType = new GraphQLObjectType({
       type: new GraphQLList(BookType),
       resolve(parent, args) {
         const exclude = args.exclude ? args.exclude : null;
-        if (limit) {
+        if (args.limit) {
           const start = args.offset ? args.offset : 0;
           const end = args.limit + start > books.length - 1 ? books.length - 1 : args.limit + start;
           return books
@@ -112,7 +112,7 @@ const LanguageType = new GraphQLObjectType({
       type: new GraphQLList(BookType),
       resolve(parent, args) {
         const exclude = args.exclude ? args.exclude : null;
-        if (limit) {
+        if (args.limit) {
           const start = args.offset ? args.offset : 0;
           const end = args.limit + start > books.length - 1 ? books.length - 1 : args.limit + start;
           return books
@@ -180,8 +180,9 @@ const RootQuery = new GraphQLObjectType({
               .sort((a, b) => a.rating > b.rating ? -1 : 1);
           }
           return books
+            .filter(b => b.id != exclude)
             .slice(start, end)
-            .sort((a, b) => a.rating > b.rating ? -1 : 1);
+            .sort((a, b) => a.title > b.title ? 1 : -1);
         }
         else if (args.rating) {
           return books
