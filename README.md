@@ -17,9 +17,11 @@ View the live app [here](https://bookshelf-orcin.vercel.app/).
 
 ![](/screenshots/menu.jpg)
 ![](/screenshots/filter-by-author.jpg)
+
 Books can be filtered by author, genre, or rating.
 
 ![](/screenshots/also-by.jpg)
+
 When viewing a book, users can see other books by the author. If an author has no other books, books of the same genre are displayed.
 
 ## Using the API
