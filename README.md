@@ -1,4 +1,4 @@
-# GraphQL [Bookshelf API](https://bookshelf-orcin.vercel.app/)
+# [GraphQL Bookshelf API](https://bookshelf-orcin.vercel.app/)
 
 This API delivers data about books from JSON files with an Express/GraphQL server.
 
@@ -28,7 +28,7 @@ When viewing a book, users can see other books by the author. If an author has n
 
 The GraphQL Bookshelf API only has one endpoint: `/graphql`.
 
-From this endpoint, users can query for books, as a list or by id, with filters for rating, genre, and author. Users cal also query for a list of authors and genres.
+From this endpoint, users can query for books, genres, and authors. `BookType` has foreign keys to `GenreType` and `AuthorType`. Users can access lists of books from a specified genre or author through the graph. 
 
 All lists of books are filtered by rating, with the highest rated books at the top of the list.
 
@@ -42,13 +42,11 @@ Returns every book except book 1.
 
 The excludes argument can be used in cojunction with `genre` or `rating` arguments.
 
-#### books(genre:"Fiction")
+This is used to exclude the current book in a list of books also by this author
 
-Queries for all books of genre Fiction.
+#### book(id: 1)
 
-#### books(authorId: 1)
-
-Queries for all books by author 1.
+Queries for single book by id.
 
 #### books(rating: 4)
 
@@ -58,32 +56,40 @@ Queries for all books with a rating of 4 or higher.
 
 Returns a list of authors.
 
-### genres
-
-Returns a list of genres.
-
-Note: Genres cannot be queried individually by id.
-
-### book(id: 1)
-
-Returns book with id of 1.
-
 ### author(id: 1)
 
 Returns author with id of 1.
 
+Can get a list of books by the author with specified id.
+
+### genres
+
+Returns a list of genres.
+
+### genre(id: 1)
+
+Returns genre with id of 1.
+
+Can get a list of books from genre of specified id.
+
+
 ## Schema
 
-### book
+### BookType
 
 - id
 - title
-- genre
+- genre (id points to GenreType)
 - published
 - rating
+- author (id points to AuthorType)
 
-### author
+### AuthorType
 
 - id
 - firstName
 - lastName
+
+### GenreType
+- id
+- name
