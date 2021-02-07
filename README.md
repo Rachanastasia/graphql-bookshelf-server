@@ -56,7 +56,7 @@ Queries for all books with a rating of 4 or higher.
 
 Returns a list of authors.
 
-### author(id: 1)
+#### author(id: 1)
 
 Returns author with id of 1.
 
@@ -66,12 +66,31 @@ Can get a list of books by the author with specified id.
 
 Returns a list of genres.
 
-### genre(id: 1)
+#### genre(id: 1)
 
 Returns genre with id of 1.
 
 Can get a list of books from genre of specified id.
 
+## Example Query
+
+```
+{
+genre(id:1){
+    id,
+    name,
+    books{
+        id,
+        title,
+        author{
+            firstName,
+            lastName
+        }
+    }
+}
+}
+
+```
 
 ## Schema
 
